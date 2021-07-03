@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<голова>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <ссылка rel="таблица стилей" href="https://fonts.googleapis.com/css?family=Lato:400,700|Монтсеррат:900">
+    <title>>Документ</title>
+    <стиль>
+
+тело{
+    цвет фона: белый;
+}
+  
+#таймер {
+  цвет: #eeeeeee;
+  выравнивание текста: по центру;
+  преобразование текста: верхний регистр;
+  семейство шрифтов: 'Lato', sans-serif;
+  размер шрифта: .7em;
+  интервал между буквами: 5px;
+}
+
+.дни, .часы, .минуты, .секунды {
+  дисплей: встроенный блок;
+  обивка: 20px;
+  ширина: 100px;
+  радиус границы: 5пикселей;
+}
+
+.дни {
+  предыстория: #EF2F3C;
+}
+
+.часы {
+  предыстория: #ээээээ;
+  цвет: #183059;
+}
+
+.минуты {
+  предыстория: #276FBF;
+}
+
+.секунды {
+  предыстория: #F0A202;
+}
+
+.числа {
+  семейство шрифтов: "Монтсеррат", без засечек;
+  цвет:  #183059;
+  размер шрифта: 4em;
+  выравнивание текста: по центру;
+}
+
+.белый {
+  положение: абсолютное;
+  предыстория:  #ээээээ;
+  высота: 85px;
+  ширина: 75px;
+  слева: 30%;
+  топ: 2%;
+}
+
+.красный {
+  положение: абсолютное;
+  предыстория:  #EF2F3C;
+  слева: 18%;
+  топ: 9%;
+  высота: 65px;
+  ширина: 70px;
+ 
+}
+
+.синий {
+  положение: абсолютное;
+  фон:  #276FBF;
+  высота: 80px;
+  ширина: 80px;
+  слева: 60%;
+  топ: 5%;
+
+
+}
+
+
+    </style>
+</head>
+<тело>
+    
+<div id="таймер">
+
+    <div class="days"> 
+        <div id="days" class="numbers "> </div>days</div> 
+      <div class="часы"> 
+        <div  id="hours" class="numbers"> </div>hours</div> 
+      <div class="минуты"> 
+        <div  id="minutes" class="numbers"> </div>minutes</div> 
+      <div   class="seconds"> 
+        <div id="seconds" class="numbers"> </div>seconds</div> 
+      </div>
+
+</div>
+
+</body>
+<скрипт>
+    const year = новая дата().getFullYear();
+const myDate = новая дата('Sep 1, 2021 00:00:01');
+console.log(myDate);
+
+// обратный отсчет
+пусть timer = setInterval(функция() {
+
+  // получить сегодняшнюю дату
+  const today = новая дата().getTime();
+
+  // получить разницу
+  const diff = myDate - сегодня;
+
+  // математика
+  пусть дни = мат.пол(разница / (1000 * 60 * 60 * 24));
+  пусть часы = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  пусть минуты = математич.пол((diff % (1000 * 60 * 60)) / (1000 * 60));
+  пусть секунды = Math.floor((diff % (1000 * 60)) / 1000);
+
+  // дисплей
+  document.getElementById("дни").innerHTML=дни
+  document.getElementById("часы").innerHTML=часы
+  document.getElementById("минуты").innerHTML=минуты
+  document.getElementById("seconds").innerHTML=секунды
+
+
+
+}, 1);
+</script>
+</html>
